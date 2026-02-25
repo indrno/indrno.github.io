@@ -16,6 +16,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
 
 body::before {
@@ -42,7 +43,7 @@ body::before {
 
 @keyframes drift {
     from { transform: scale(1) translate(0, 0); }
-    to { transform: scale(1.1) translate(2%, -2%); }
+    to   { transform: scale(1.03) translate(0.6%, -0.6%); }
 }
 
 /* Sentral tekst */
@@ -53,7 +54,7 @@ body::before {
     letter-spacing: 0.5px;
     opacity: 0.9;
     text-shadow: 0 0 8px rgba(255,255,255,0.07);
-
+    position: relative; z-index: 1;
 }
 
 /* Litt mer “layout-discipline” uten å bli mindre minimalistisk */
@@ -87,9 +88,10 @@ body::before {
 
     /* Strammere, mer presis glow */
     text-shadow:
-        0 0 12px rgba(180,200,255,0.20),
-        0 0 40px rgba(140,170,255,0.08);
+        0 0 10px rgba(180,200,255,0.18),
+        0 0 34px rgba(140,170,255,0.07);
 }
+
 .logo::after {
     content: "";
     display: block;
@@ -124,6 +126,24 @@ body::before {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
+/* Vertikal vignette for mer “cinematic” dybde */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+        120% 85% at 50% 40%,
+        transparent 0%,
+        rgba(0,0,0,0.18) 55%,
+        rgba(0,0,0,0.42) 100%
+    );
+
+    opacity: 0.75;
+}
+
 
 
 
