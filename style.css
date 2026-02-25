@@ -93,7 +93,7 @@ body::before {
 @keyframes logoEnter {
     from {
         opacity: 0;
-        transform: translateY(4px);
+        transform: translateY(1px);
     }
     to {
         opacity: 1;
@@ -157,4 +157,5 @@ body::after {
 
     opacity: 0.6;
 }
+
 
