@@ -18,7 +18,6 @@ body {
     overflow: hidden;
 }
 
-/* Subtil stjernedis / glød-effekt */
 body::before {
     content: "";
     position: absolute;
@@ -26,13 +25,21 @@ body::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.05), transparent 70%);
-    animation: drift 18s ease-in-out infinite alternate;
+
+    background:
+        radial-gradient(
+            circle at 52% 38%,
+            rgba(170,195,255,0.08) 0%,
+            rgba(120,150,255,0.05) 18%,
+            rgba(90,110,200,0.03) 35%,
+            transparent 65%
+        );
+
+    animation: drift 22s ease-in-out infinite alternate;
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.45;
 }
 
-/* Minimal bevegelse for atmosfære */
 @keyframes drift {
     from { transform: scale(1) translate(0, 0); }
     to { transform: scale(1.1) translate(2%, -2%); }
@@ -117,6 +124,7 @@ body::before {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
 
 
 
