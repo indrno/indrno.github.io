@@ -52,43 +52,45 @@ body::before {
 
 /* Moderne signatur */
 .logo {
-    margin: 0 0 1.25rem 0;
-    font-weight: 520;
-    letter-spacing: 0.22em;
+    margin: 0 0 1.4rem 0;
+    font-weight: 540;
+    letter-spacing: 0.24em;
     text-transform: lowercase;
 
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1;
 
-    /* Brand: subtil gradient i tekst */
-    background: linear-gradient(90deg,
-        rgba(255,255,255,0.78) 0%,
-        rgba(255,255,255,0.96) 45%,
-        rgba(210,225,255,0.88) 70%,
+    /* Tech-lux gradient */
+    background: linear-gradient(92deg,
+        rgba(230,235,255,0.75) 0%,
+        rgba(255,255,255,0.95) 38%,
+        rgba(190,210,255,0.85) 68%,
         rgba(255,255,255,0.80) 100%
     );
+
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 
-    /* Subtil glød + dybde */
+    /* Strammere, mer presis glow */
     text-shadow:
-        0 0 18px rgba(255, 255, 255, 0.10),
-        0 0 44px rgba(255, 255, 255, 0.05);
+        0 0 12px rgba(180,200,255,0.20),
+        0 0 40px rgba(140,170,255,0.08);
 }
-
 .logo::after {
     content: "";
     display: block;
     height: 1px;
-    margin: 0.9rem auto 0;
-    width: min(18rem, 55vw);
+    margin: 1rem auto 0;
+    width: min(16rem, 50vw);
+
     background: linear-gradient(90deg,
         transparent,
-        rgba(255,255,255,0.18),
+        rgba(170,195,255,0.45),
         transparent
     );
-    opacity: 0.6;
+
+    opacity: 0.55;
 }
 
 /* Poetisk brødtekst beholdes (serif), men litt mer raffinert spacing */
@@ -109,5 +111,6 @@ body::before {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
 
 
