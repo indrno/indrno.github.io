@@ -62,11 +62,13 @@ body::before {
 
 /* Moderne signatur */
 .logo {
-    margin: 0 0 1.4rem 0;
+    margin: 0 0 1.9rem 0;
     font-weight: 540;
     letter-spacing: 0.24em;
     text-transform: lowercase;
-
+    animation: logoEnter 900ms ease-out both;
+    transition: letter-spacing 400ms ease, 
+                text-shadow 400ms ease;
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1;
 
@@ -86,6 +88,24 @@ body::before {
     text-shadow:
         0 0 6px rgba(170,195,255,0.22),
         0 0 24px rgba(120,150,255,0.08);
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo:hover {
+    letter-spacing: 0.28em; /* veldig liten økning */
+    text-shadow:
+        0 0 8px rgba(170,195,255,0.28),
+        0 0 28px rgba(120,150,255,0.12);
 }
 
 .logo::after {
@@ -137,3 +157,4 @@ body::after {
 
     opacity: 0.6;
 }
+
