@@ -67,8 +67,7 @@ body::before {
     letter-spacing: 0.24em;
     text-transform: lowercase;
     animation: logoEnter 900ms ease-out both;
-    transition: letter-spacing 400ms ease, 
-                text-shadow 400ms ease;
+    transition: text-shadow 400ms ease;
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1;
 
@@ -93,7 +92,7 @@ body::before {
 @keyframes logoEnter {
     from {
         opacity: 0;
-        transform: translateY(1px);
+        transform: translateY(4px);
     }
     to {
         opacity: 1;
@@ -102,10 +101,9 @@ body::before {
 }
 
 .logo:hover {
-    letter-spacing: 0.28em; /* veldig liten økning */
     text-shadow:
-        0 0 8px rgba(170,195,255,0.28),
-        0 0 28px rgba(120,150,255,0.12);
+        0 0 8px rgba(170,195,255,0.26),
+        0 0 30px rgba(120,150,255,0.10);
 }
 
 .logo::after {
@@ -157,5 +155,6 @@ body::after {
 
     opacity: 0.6;
 }
+
 
 
