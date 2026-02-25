@@ -67,7 +67,6 @@ body::before {
     letter-spacing: 0.24em;
     text-transform: lowercase;
     animation: logoEnter 900ms ease-out both;
-    transition: text-shadow 400ms ease;
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1;
 
@@ -98,12 +97,6 @@ body::before {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.logo:hover {
-    text-shadow:
-        0 0 8px rgba(170,195,255,0.26),
-        0 0 30px rgba(120,150,255,0.10);
 }
 
 .logo::after {
@@ -155,6 +148,7 @@ body::after {
 
     opacity: 0.6;
 }
+
 
 
 
