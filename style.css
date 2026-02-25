@@ -1,3 +1,7 @@
+html {
+    background-color: #05060a;
+}
+
 /* Global styling */
 body {
     margin: 0;
@@ -11,7 +15,7 @@ body {
     );
     color: #e6e6e6;
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +136,7 @@ body::after {
 
     opacity: 0.6;
 }
+
 
 
 
