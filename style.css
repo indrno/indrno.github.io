@@ -79,8 +79,8 @@ body::before {
 
     /* Strammere, mer presis glow */
     text-shadow:
-        0 0 10px rgba(180,200,255,0.18),
-        0 0 34px rgba(140,170,255,0.07);
+        0 0 6px rgba(170,195,255,0.22),
+        0 0 24px rgba(120,150,255,0.08);
 }
 
 .logo::after {
@@ -107,19 +107,13 @@ body::before {
     letter-spacing: 0.4px;
     opacity: 0.88;
     margin: 0;
+    animation: enter 700ms ease-out both;
+    text-shadow: 0 0 10px rgba(255,255,255,0.06);
 }
 
-/* Minimal “fade in” (valgfritt men ser proft ut) */
-.center {
-    animation: enter 700ms ease-out both;
-}
 @keyframes enter {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
-}
-
-.center p {
-    text-shadow: 0 0 10px rgba(255,255,255,0.06);
 }
 
 /* Vertikal vignette for mer “cinematic” dybde */
@@ -136,8 +130,9 @@ body::after {
         rgba(0,0,0,0.42) 100%
     );
 
-    opacity: 0.75;
+    opacity: 0.6;
 }
+
 
 
 
