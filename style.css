@@ -4,7 +4,7 @@ body {
     padding: 0;
     background: #0b0b0d;
     color: #e6e6e6;
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -43,15 +43,47 @@ body::before {
 
 }
 
-/* Logo / overskrift */
-.logo {
-    font-size: 4rem;
-    font-weight: 400;
-    letter-spacing: 0.15em;
-    margin: 0 0 1.5rem 0;
+/* Litt mer “layout-discipline” uten å bli mindre minimalistisk */
+.center {
     text-align: center;
-    opacity: 0.95;
-    text-shadow: 
-        0 0 12px rgba(255,255,255,0.15),
-        0 0 24px rgba(255,255,255,0.05);
+    padding: 2rem;
+    max-width: 46rem;
 }
+
+/* Moderne signatur */
+.logo {
+    margin: 0 0 1.25rem 0;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: lowercase;
+
+    /* Responsive størrelse som føles premium */
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 1;
+
+    /* Subtil glød + litt “dybde” */
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow:
+        0 0 18px rgba(255, 255, 255, 0.10),
+        0 0 40px rgba(255, 255, 255, 0.04);
+}
+
+/* Poetisk brødtekst beholdes (serif), men litt mer raffinert spacing */
+.center p {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    line-height: 1.75;
+    letter-spacing: 0.4px;
+    opacity: 0.88;
+    margin: 0;
+}
+
+/* Minimal “fade in” (valgfritt men ser proft ut) */
+.center {
+    animation: enter 700ms ease-out both;
+}
+@keyframes enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
