@@ -53,19 +53,42 @@ body::before {
 /* Moderne signatur */
 .logo {
     margin: 0 0 1.25rem 0;
-    font-weight: 500;
+    font-weight: 520;
     letter-spacing: 0.22em;
     text-transform: lowercase;
 
-    /* Responsive størrelse som føles premium */
     font-size: clamp(2.6rem, 6vw, 4.2rem);
     line-height: 1;
 
-    /* Subtil glød + litt “dybde” */
-    color: rgba(255, 255, 255, 0.92);
+    /* Brand: subtil gradient i tekst */
+    background: linear-gradient(90deg,
+        rgba(255,255,255,0.78) 0%,
+        rgba(255,255,255,0.96) 45%,
+        rgba(210,225,255,0.88) 70%,
+        rgba(255,255,255,0.80) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    /* Subtil glød + dybde */
     text-shadow:
         0 0 18px rgba(255, 255, 255, 0.10),
-        0 0 40px rgba(255, 255, 255, 0.04);
+        0 0 44px rgba(255, 255, 255, 0.05);
+}
+
+.logo::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 0.9rem auto 0;
+    width: min(18rem, 55vw);
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255,255,255,0.18),
+        transparent
+    );
+    opacity: 0.6;
 }
 
 /* Poetisk brødtekst beholdes (serif), men litt mer raffinert spacing */
@@ -86,4 +109,5 @@ body::before {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+
 
