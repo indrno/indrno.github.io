@@ -117,8 +117,8 @@ body::before {
 
 /* Poetisk brødtekst beholdes (serif), men litt mer raffinert spacing */
 .center p {
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+/*    font-family: "Georgia", "Times New Roman", serif;
+*/    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
     line-height: 1.75;
     letter-spacing: 0.4px;
     opacity: 0.88;
