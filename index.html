@@ -119,43 +119,39 @@ body {
 </head>
 <body>
 
-  <div class="cursor" id="cursor"></div>
+  <div class="vignette"></div>
 
-  <main class="scene" role="main">
-    <div class="ambient"></div>
+  <main class="scene">
     <span class="line line-1">Bak denne siden er ingenting.</span>
-    <span class="pause" aria-hidden="true"></span>
+    <span class="divider" aria-hidden="true"></span>
     <span class="line line-2">…og likevel er det nok.</span>
   </main>
 
   <script>
-    // Cursor follow
-    const cursor = document.getElementById('cursor');
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-    let cx = mx, cy = my;
+    // Draw grain into a 256×256 canvas tile, export as data URL,
+    // then tile it as a CSS background — works reliably on iOS Safari
+    (function () {
+      const c   = document.createElement('canvas');
+      c.width   = 256;
+      c.height  = 256;
+      const ctx = c.getContext('2d');
+      const img = ctx.createImageData(256, 256);
+      for (let i = 0; i < img.data.length; i += 4) {
+        const v = Math.random() * 255 | 0;
+        img.data[i]     = v;
+        img.data[i + 1] = v;
+        img.data[i + 2] = v;
+        img.data[i + 3] = 20; // faint alpha
+      }
+      ctx.putImageData(img, 0, 0);
 
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX;
-      my = e.clientY;
-    });
-
-    (function animate() {
-      cx += (mx - cx) * 0.08;
-      cy += (my - cy) * 0.08;
-      cursor.style.left = cx + 'px';
-      cursor.style.top = cy + 'px';
-      requestAnimationFrame(animate);
+      const div = document.createElement('div');
+      div.style.cssText =
+        'position:fixed;inset:0;pointer-events:none;z-index:2;opacity:0.4;' +
+        'background-image:url(' + c.toDataURL() + ');' +
+        'background-repeat:repeat;background-size:256px 256px;';
+      document.body.appendChild(div);
     })();
-
-    // Hide cursor when idle
-    let idleTimer;
-    document.addEventListener('mousemove', () => {
-      cursor.style.opacity = '1';
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        cursor.style.opacity = '0';
-      }, 3000);
-    });
   </script>
 
 </body>
