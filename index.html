@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080706" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <title>Ingenting</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,20 +81,11 @@ body {
 
 .divider {
   display: block;
-  height: 3em;
+  width: 1px;
+  height: 2.8em;
+  margin: 0.6em auto;
   opacity: 0;
   animation: fadein 1.2s ease 3.6s forwards;
-  position: relative;
-}
-
-.divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 1px;
-  height: 2em;
   background: linear-gradient(to bottom, transparent, #4a443c, transparent);
 }
 
@@ -123,7 +117,7 @@ body {
 
   <main class="scene">
     <span class="line line-1">Bak denne siden er ingenting.</span>
-    <span class="divider" aria-hidden="true"></span>
+    <div class="divider" aria-hidden="true"></div>
     <span class="line line-2">…og likevel er det nok.</span>
   </main>
 
